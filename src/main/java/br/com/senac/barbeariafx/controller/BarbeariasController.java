@@ -1,4 +1,13 @@
 package br.com.senac.barbeariafx.controller;
 
-public class BarbeariasController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class BarbeariasController implements Initializable {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        
+    }
 }
