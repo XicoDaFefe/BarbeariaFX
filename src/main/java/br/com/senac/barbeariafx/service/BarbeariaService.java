@@ -4,8 +4,9 @@ import br.com.senac.barbeariafx.model.Barbearia;
 import br.com.senac.barbeariafx.repository.Barbearias;
 
 public class BarbeariaService implements Barbearias {
+
     @Override
-    public void salvarHorario(Barbearia barbearia) {
+    public void salvarBarberia(Barbearia barbearia) {
 
     }
 

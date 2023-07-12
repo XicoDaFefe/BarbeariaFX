@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Barbearias {
 
-    public void salvarHorario(Barbearia barbearia);
+    public void salvarBarberia(Barbearia barbearia);
 
     public List <Barbearia> buscarTodosOsHorarios;
 
