@@ -9,7 +9,7 @@ public interface Barbearias {
 
     public void salvarBarberia(Barbearia barbearia);
 
-    public List <Barbearia> buscarTodosOsHorarios;
+    public List <Barbearia> buscarTodosOsHorarios();
 
     public Barbearia buscarUmHorario(int id);
 
