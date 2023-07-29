@@ -2,6 +2,7 @@ module br.com.senac.barbeariafx {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires javafx.graphics;
 
 
     opens br.com.senac.barbeariafx to javafx.fxml;

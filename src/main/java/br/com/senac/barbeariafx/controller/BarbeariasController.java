@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
