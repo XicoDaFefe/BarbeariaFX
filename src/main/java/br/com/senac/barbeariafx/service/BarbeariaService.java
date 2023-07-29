@@ -3,10 +3,8 @@ package br.com.senac.barbeariafx.service;
 import br.com.senac.barbeariafx.model.Barbearia;
 import br.com.senac.barbeariafx.repository.Barbearias;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -94,7 +92,15 @@ public class BarbeariaService implements Barbearias {
         return barbearia;
     }
 
-    private Barbearia extraiBarbearia(ResultSet resuldatoBusca) {
+    private Barbearia extraiBarbearia(ResultSet resuldatoBusca) throws SQLException, ParseException {
+        Barbearia barbearia = new Barbearia();
+        barbearia.setId(resuldatoBusca.getInt(1));
+        barbearia.setClientes(resuldatoBusca.getString(2));
+        barbearia.setCortes(resuldatoBusca.getString(3));
+        barbearia.setHorario(resuldatoBusca.getString(4));
+        Date dia = FORMATADOR.parse(resuldatoBusca.getString(5));
+        barbearia.setDia(dia);
+        return barbearia;
     }
 
     @Override
