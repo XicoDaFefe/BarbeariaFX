@@ -6,6 +6,7 @@ import br.com.senac.barbeariafx.repository.Barbearias;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -105,6 +106,23 @@ public class BarbeariaService implements Barbearias {
 
     @Override
     public List<Barbearia> buscarTodosOsHorarios() {
-        return null;
+        List<Barbearia> barbearias =new ArrayList<>();
+
+        try {
+                Connection con = conexao();
+                PreparedStatement buscarTodos = con.prepareStatement(BUSCAR_TODAS);
+                ResultSet resultadoBusca =buscarTodos.executeQuery();
+                while (resultadoBusca.next()){
+                Barbearia barbearia = extraiBarbearia(resultadoBusca);
+                barbearias.add(barbearia);
+                }
+                buscarTodos.close();
+                con.close();
+        } catch (Exception e){
+            e.printStackTrace();
+            System.out.println("ERRO BUSCANDO TODOS OS HORARIOS");
+            System.exit(0);
+        }
+        return barbearias;
     }
 }
