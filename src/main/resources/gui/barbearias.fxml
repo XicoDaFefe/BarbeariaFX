@@ -6,9 +6,41 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Font?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="br.com.senac.barbeariafx.controller.BarbeariasController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="780.0" prefWidth="820.0">
+
+    <children>
+<VBox layoutX="16.0" layoutY="26.0"
+    prefWidth="600.0" prefHeight="442.0">
+    <Label alignment="CENTER" contentDisplay="CENTER"
+           prefHeight="16.0" prefWidth="611.0"
+           text="Barbearia">
+        <font>
+            <Font size="45.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="tblHorario" prefHeight="226" prefWidth="407.0">
+        <columns>
+            <TableColumn fx:id="clCliente" prefWidth="200.0" text="Cliente"/>
+            <TableColumn fx:id="clCorte" prefWidth="212.0" text="Corte"/>
+            <TableColumn fx:id="clHorario" prefWidth="215.0" text="Horario"/>
+            <TableColumn fx:id="clDia" prefWidth="220.0" text="Dia"/>
+        </columns>
+    </TableView>
+    <HBox spacing="20.0">
+<children>
+    <Button fx:id="btnMarcar" mnemonicParsing="false"
+            onAction="#marcar" text="Marcar"/>
+</children>
+    </HBox>
+</VBox>
+    </children>
+
+
+
+
 
 </AnchorPane>

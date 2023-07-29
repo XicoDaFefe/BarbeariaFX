@@ -13,6 +13,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -87,5 +88,23 @@ public class BarbeariasController implements Initializable {
     });
     }
 
+    public void marcar(){
+        Barbearia barbearia = new Barbearia();
+        pegaValores(barbearia);
+        barbearias.salvarBarberia(barbearia);
+        atualizaDados();
+    }
 
+    private void pegaValores(Barbearia barbearia) {
+        barbearia.setClientes(txtCliente.getText());
+        barbearia.setCortes(txtCliente.getText());
+        barbearia.setHorario(txtHora.getText());
+        barbearia.setDia(dataSelecionada());
+    }
+
+    private Date dataSelecionada() {
+        LocalDateTime time = dpDia.getValue().atStartOfDay();
+        System.out.println(Date.from(time.atZone(ZoneId.systemDefault()).toInstant()));
+        return  Date.from(time.atZone(ZoneId.systemDefault()).toInstant());
+    }
 }
