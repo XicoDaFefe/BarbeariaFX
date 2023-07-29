@@ -7,8 +7,24 @@ public class Barbearia {
     private String agendar;
     private String clientes;
     private String cortes;
-    private Date horarioInicio;
-    private Date horarioTermino;
+    private String horario;
+    private Date dia;
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public Date getDia() {
+        return dia;
+    }
+
+    public void setDia(Date dia) {
+        this.dia = dia;
+    }
 
     public int getId() {
         return id;
@@ -18,21 +34,6 @@ public class Barbearia {
         this.id = id;
     }
 
-    public Date getHorarioInicio() {
-        return horarioInicio;
-    }
-
-    public void setHorarioInicio(Date horarioInicio) {
-        this.horarioInicio = horarioInicio;
-    }
-
-    public Date getHorarioTermino() {
-        return horarioTermino;
-    }
-
-    public void setHorarioTermino(Date horarioTermino) {
-        this.horarioTermino = horarioTermino;
-    }
 
     public String getAgendar() {
         return agendar;

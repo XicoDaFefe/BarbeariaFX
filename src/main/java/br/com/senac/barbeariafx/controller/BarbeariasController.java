@@ -25,7 +25,9 @@ public class BarbeariasController implements Initializable {
     @FXML
     private TextField txtCortes;
     @FXML
-    private DatePicker dpHorario;
+    private TextField txtHora;
+    @FXML
+    private DatePicker dpDia;
     @FXML
     private TableView <Barbearia> tblHorario;
     @FXML
@@ -36,6 +38,8 @@ public class BarbeariasController implements Initializable {
     private TableColumn<Barbearia, String> clCorte;
     @FXML
     private TableColumn<Barbearia, String> clHorario;
+    @FXML
+    private TableColumn<Barbearia, String> clDia;
     private Barbearias barbearias;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,10 +56,8 @@ public class BarbeariasController implements Initializable {
 
     private void configuraTela() {
         BooleanBinding camposPreenchidos = txtCliente.textProperty()
-                .isEmpty().or(txtCortes.textProperty().isEmpty())
-                .or(dpHorario.valueProperty().isNull());
-
-            BooleanBinding horarioSelecionado =tblHorario.getSelectionModel().selectedItemProperty().isNull();
+                .isEmpty().or(txtCortes.textProperty().isEmpty()).or(txtHora.textProperty().isEmpty())
+                .or(dpDia.valueProperty().isNull());
 
             btnMarcar.disableProperty().bind(camposPreenchidos);
 
@@ -63,11 +65,11 @@ public class BarbeariasController implements Initializable {
                 (b, o, n) -> {
                     if(n != null){
                         LocalDate data = null;
-                        data = n.getHorarioInicio()
+                        data = n.getDia()
                                 .toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                         txtCliente.setText(n.getClientes());
                         txtCortes.setText(n.getCortes());
-                        dpHorario.setValue(data);
+                        dpDia.setValue(data);
                     }
                 }
         );
@@ -77,8 +79,9 @@ public class BarbeariasController implements Initializable {
     private void configuraColunas() {
     clCliente.setCellValueFactory(new PropertyValueFactory<>("Cliente"));
     clCorte.setCellValueFactory(new PropertyValueFactory<>("Corte"));
-    clHorario.setCellValueFactory(cellData ->{
-        Date data =cellData.getValue().getHorarioInicio();
+    clHorario.setCellValueFactory(new PropertyValueFactory<>("Horario"));
+    clDia.setCellValueFactory(cellData ->{
+        Date data =cellData.getValue().getDia();
         DateFormat formataData = new SimpleDateFormat("dd/MM/YYYY");
         String dataFormatada =formataData.format(data);
         return new SimpleStringProperty(dataFormatada);
