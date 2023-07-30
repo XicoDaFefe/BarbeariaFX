@@ -37,7 +37,10 @@
             <TextField fx:id="txtHora" promptText="Horário"/>
             <DatePicker fx:id="dpDia" promptText="Dia"/>
         </children>
-<children>
+        </HBox>
+    <HBox alignment="CENTER_RIGHT" spacing="15.0">
+    <children>
+
     <Button fx:id="btnMarcar" mnemonicParsing="false"
             onAction="#marcar" text="Marcar"/>
 </children>

@@ -24,8 +24,9 @@
             <artifactId>javafx-fxml</artifactId>
             <version>18.0.2</version>
         </dependency>
-        <dependency>
 
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
