@@ -3,6 +3,7 @@ module br.com.senac.barbeariafx {
     requires javafx.fxml;
     requires java.sql;
     requires javafx.graphics;
+    requires mysql.connector.j;
 
 
     opens br.com.senac.barbeariafx to javafx.fxml;
