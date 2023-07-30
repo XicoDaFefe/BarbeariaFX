@@ -31,6 +31,12 @@
         </columns>
     </TableView>
     <HBox spacing="20.0">
+        <children>
+            <TextField fx:id="txtCliente" promptText="Cliente"/>
+            <TextField fx:id="txtCortes" promptText="Corte"/>
+            <TextField fx:id="txtHora" promptText="Horário"/>
+            <DatePicker fx:id="dpDia" promptText="Dia"/>
+        </children>
 <children>
     <Button fx:id="btnMarcar" mnemonicParsing="false"
             onAction="#marcar" text="Marcar"/>
