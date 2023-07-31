@@ -29,7 +29,7 @@ public class BarbeariasController implements Initializable {
     @FXML
     private DatePicker dpDia;
     @FXML
-    private TableView <Barbearia> tblHorario;
+    private TableView <Barbearia> tblBarbearias;
     @FXML
     private Button btnMarcar;
     @FXML
@@ -51,7 +51,7 @@ public class BarbeariasController implements Initializable {
     }
 
     private void atualizaDados() {
-        tblHorario.getItems().setAll(barbearias.buscarTodosOsHorarios());
+        tblBarbearias.getItems().setAll(barbearias.buscarTodosOsHorarios());
     }
 
     private void configuraTela() {
@@ -59,9 +59,11 @@ public class BarbeariasController implements Initializable {
                 .isEmpty().or(txtCortes.textProperty().isEmpty()).or(txtHora.textProperty().isEmpty())
                 .or(dpDia.valueProperty().isNull());
 
-            btnMarcar.disableProperty().bind(camposPreenchidos);
+            BooleanBinding barbeariaSelecionada = tblBarbearias.getSelectionModel().selectedItemProperty().isNull();
 
-        tblHorario.getSelectionModel().selectedItemProperty().addListener(
+            btnMarcar.disableProperty().bind(barbeariaSelecionada.not().or(camposPreenchidos));
+
+        tblBarbearias.getSelectionModel().selectedItemProperty().addListener(
                 (b, o, n) -> {
                     if(n != null){
                         LocalDate data = null;

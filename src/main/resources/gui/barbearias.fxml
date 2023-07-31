@@ -22,7 +22,7 @@
             <Font size="45.0"/>
         </font>
     </Label>
-    <TableView fx:id="tblHorario" prefHeight="600.0" prefWidth="800.0">
+    <TableView fx:id="tblBarbearias" prefHeight="600.0" prefWidth="800.0">
         <columns>
             <TableColumn fx:id="clCliente" prefWidth="240.0" text="Cliente"/>
             <TableColumn fx:id="clCorte" prefWidth="240.0" text="Corte"/>

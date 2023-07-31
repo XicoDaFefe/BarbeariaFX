@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface Barbearias {
 
-    public default void salvarBarberia(Barbearia barbearia) {
-
-    }
+    public void salvarBarberia(Barbearia barbearia);
 
     public List <Barbearia> buscarTodosOsHorarios();
 
