@@ -61,6 +61,7 @@ public class BarbeariaService implements Barbearias {
             salvar.executeUpdate();
             salvar.close();
             con.close();
+            System.out.println("dados inseridos com sucesso");
         } catch (Exception e){
             e.printStackTrace();
             System.out.println("ERRO SALVANDO HORARIO");

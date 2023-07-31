@@ -85,7 +85,8 @@ public class BarbeariasController implements Initializable {
         DateFormat formataData = new SimpleDateFormat("dd/MM/YYYY");
         String dataFormatada =formataData.format(data);
         return new SimpleStringProperty(dataFormatada);
-    });
+    }
+    );
     }
 
     public void marcar(){
@@ -97,7 +98,7 @@ public class BarbeariasController implements Initializable {
 
     private void pegaValores(Barbearia barbearia) {
         barbearia.setClientes(txtCliente.getText());
-        barbearia.setCortes(txtCliente.getText());
+        barbearia.setCortes(txtCortes.getText());
         barbearia.setHorario(txtHora.getText());
         barbearia.setDia(dataSelecionada());
     }

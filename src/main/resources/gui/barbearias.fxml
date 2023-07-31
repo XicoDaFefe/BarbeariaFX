@@ -10,24 +10,24 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="br.com.senac.barbeariafx.controller.BarbeariasController"
-            prefHeight="780.0" prefWidth="820.0">
+            prefHeight="540.0" prefWidth="960.0">
 
     <children>
-<VBox layoutX="16.0" layoutY="26.0"
-    prefWidth="600.0" prefHeight="442.0">
+<VBox layoutX="18.0" layoutY="28.0"
+    prefWidth="920.0" prefHeight="480.0">
     <Label alignment="CENTER" contentDisplay="CENTER"
-           prefHeight="16.0" prefWidth="611.0"
-           text="Barbearia">
+           prefHeight="20.0" prefWidth="940.0"
+           text="Barbearia Horários">
         <font>
             <Font size="45.0"/>
         </font>
     </Label>
-    <TableView fx:id="tblHorario" prefHeight="226" prefWidth="407.0">
+    <TableView fx:id="tblHorario" prefHeight="600.0" prefWidth="800.0">
         <columns>
-            <TableColumn fx:id="clCliente" prefWidth="200.0" text="Cliente"/>
-            <TableColumn fx:id="clCorte" prefWidth="212.0" text="Corte"/>
-            <TableColumn fx:id="clHorario" prefWidth="215.0" text="Horario"/>
-            <TableColumn fx:id="clDia" prefWidth="220.0" text="Dia"/>
+            <TableColumn fx:id="clCliente" prefWidth="240.0" text="Cliente"/>
+            <TableColumn fx:id="clCorte" prefWidth="240.0" text="Corte"/>
+            <TableColumn fx:id="clHorario" prefWidth="240.0" text="Horario"/>
+            <TableColumn fx:id="clDia" prefWidth="240.0" text="Dia"/>
         </columns>
     </TableView>
     <HBox spacing="20.0">
