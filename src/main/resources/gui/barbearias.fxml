@@ -24,10 +24,10 @@
     </Label>
     <TableView fx:id="tblBarbearias" prefHeight="600.0" prefWidth="800.0">
         <columns>
-            <TableColumn fx:id="clCliente" prefWidth="240.0" text="Cliente"/>
-            <TableColumn fx:id="clCorte" prefWidth="240.0" text="Corte"/>
-            <TableColumn fx:id="clHorario" prefWidth="240.0" text="Horario"/>
-            <TableColumn fx:id="clDia" prefWidth="240.0" text="Dia"/>
+            <TableColumn fx:id="clCliente" prefWidth="250.0" text="Cliente"/>
+            <TableColumn fx:id="clCorte" prefWidth="250.0" text="Corte"/>
+            <TableColumn fx:id="clHorario" prefWidth="250.0" text="Horario"/>
+            <TableColumn fx:id="clDia" prefWidth="250.0" text="Dia"/>
         </columns>
     </TableView>
     <HBox spacing="20.0">
@@ -38,7 +38,7 @@
             <DatePicker fx:id="dpDia" promptText="Dia"/>
         </children>
         </HBox>
-    <HBox alignment="CENTER_RIGHT" spacing="15.0">
+    <HBox alignment="CENTER_RIGHT" spacing="20.0">
     <children>
 
     <Button fx:id="btnMarcar" mnemonicParsing="false"
