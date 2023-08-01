@@ -20,10 +20,9 @@ public class BarbeariaService implements Barbearias {
     final String URL_BANCO = "jdbc:mysql://localhost:3306/senac_barbeariafx";
     final String CLASSE_DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    final String INSERIR = "INSERT INTO barbearia(cliente, corte, horario " +
-            " `dia`) VALUES(?, ?, ?, ?)";
-    final String BUSCAR_TODAS = "SELECT id, cliente, corte, horario " +
-            "`dia` FROM barbearia";
+    final String INSERIR = "INSERT INTO barbearia(cliente, corte, horario, dia) VALUES(?, ?, ?, ?)";
+    final String BUSCAR_TODAS = "SELECT id, cliente, corte, horario, dia " +
+            "FROM barbearia";
     final String BUSCAR = "SELECT id, cliente, corte, horario" +
             "`dia` FROM barbearia  WHERE id = ?";
     final String FORMATO_DATA = "yyyy-MM-dd";
@@ -81,7 +80,7 @@ public class BarbeariaService implements Barbearias {
     try {
             Connection con = conexao();
             PreparedStatement buscar = con.prepareStatement(BUSCAR);
-            buscar.setInt(1,id);
+            buscar.setInt(1, id);
 
         ResultSet resuldatoBusca = buscar.executeQuery();
         resuldatoBusca.next();
@@ -115,7 +114,7 @@ public class BarbeariaService implements Barbearias {
         try {
                 Connection con = conexao();
                 PreparedStatement buscarTodos = con.prepareStatement(BUSCAR_TODAS);
-                ResultSet resultadoBusca =buscarTodos.executeQuery();
+                ResultSet resultadoBusca = buscarTodos.executeQuery();
                 while (resultadoBusca.next()){
                 Barbearia barbearia = extraiBarbearia(resultadoBusca);
                 barbearias.add(barbearia);

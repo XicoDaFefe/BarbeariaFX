@@ -79,8 +79,8 @@ public class BarbeariasController implements Initializable {
 
 
     private void configuraColunas() {
-    clCliente.setCellValueFactory(new PropertyValueFactory<>("Cliente"));
-    clCorte.setCellValueFactory(new PropertyValueFactory<>("Corte"));
+    clCliente.setCellValueFactory(new PropertyValueFactory<>("Clientes"));
+    clCorte.setCellValueFactory(new PropertyValueFactory<>("Cortes"));
     clHorario.setCellValueFactory(new PropertyValueFactory<>("Horario"));
     clDia.setCellValueFactory(cellData ->{
         Date data =cellData.getValue().getDia();
